@@ -1,0 +1,26 @@
+{
+  "name": "trade-central",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/server.js",
+  "scripts": {
+    "dev-server": "tsc-watch --noClear -p ./tsconfig.json --onSuccess \"node ./dist/server.js\"",
+    "start": "node ./dist/server.js",
+    "build": "tsc & (xcopy \"./src/views\" \"./dist/views\" /e /y /i || cp -r ./src/views ./dist/views) & (xcopy \"./src/public\" \"./dist/public\" /e /y /i || cp -r ./src/public ./dist/public)"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.18.3",
+    "mysql2": "^3.10.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.10.0",
+    "tsc-watch": "^6.2.1",
+    "typescript": "^5.5.4"
+  }
+}
